@@ -1,4 +1,6 @@
 import "leaflet/dist/leaflet.css";
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
+import 'leaflet-defaulticon-compatibility';
 import "./App.css";
 import Map from "./components/Map";
 import Header from "./components/Header";

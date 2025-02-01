@@ -53,7 +53,7 @@ const Map = () => {
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
   ];
-
+  
   const screenWidth = window.innerWidth;
   return (
     <div className="bg-black/50 relative">
