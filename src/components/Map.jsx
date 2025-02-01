@@ -1,4 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from 'leaflet';
 
 const Map = () => {
   const markers = [
@@ -33,12 +34,12 @@ const Map = () => {
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
-      geocode: [40.1431, 47.57692],
+      geocode: [42.8746, 74.5698],
       popUpTitle: "Kyrgyzstan",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
-      geocode: [41.20438, 74.76609],
+      geocode: [19.4326, -99.1332],
       popUpTitle: "Mexico",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
@@ -54,6 +55,13 @@ const Map = () => {
     },
   ];
   
+  const MyCustomIcon = L.icon({
+    iconUrl: '/marker.png', // Replace with the URL of your icon image
+    iconSize: [30, 30], // Size of the icon
+    iconAnchor: [10, 30], // Point of the icon which will correspond to marker's location
+    popupAnchor: [5, -10] // Point from which the popup should open relative to the iconAnchor
+  });
+
   const screenWidth = window.innerWidth;
   return (
     <div className="bg-black/50 relative">
@@ -61,19 +69,20 @@ const Map = () => {
         className="z-0 rounded-bl-[15rem]"
         id="map"
         zoomSnap={0.01}
-        center={[10, 0]}
-        zoom={screenWidth > 768 ? 3.4 : 1.75}
+        center={screenWidth > 768 ? [10, 0] : [25, -10]}
+        zoom={screenWidth > 768 ? 3.4 : 1.55}
         scrollWheelZoom={false}
         dragging={screenWidth > 768}
         attributionControl={false}
         zoomControl={false}
+        doubleClickZoom={false}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {markers.map((marker, index) => (
-          <Marker key={index} position={marker.geocode}>
+          <Marker key={index} position={marker.geocode} icon={MyCustomIcon}>
             <Popup>
               <h2>{marker.popUpTitle}</h2>
               <p>{marker.popUpContent}</p>

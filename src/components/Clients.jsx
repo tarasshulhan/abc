@@ -73,7 +73,7 @@ const Clients = () => {
           {clients.map((client) => (
             <div 
               key={client.id}
-              className="bg-white/15 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-1/2 lg:w-1/4 min-h-[20vh] max-h-[40vh]"
+              className="bg-white/15 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-1/2 lg:w-1/4 min-h-[20vh] max-h-[40vh] self-stretch"
             >
               <div className="h-24 flex items-center justify-center mb-4">
                 <img

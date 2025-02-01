@@ -65,7 +65,8 @@ const Contact = () => {
           Contact Us
         </h2>
         
-        <form className="space-y-6 bg-white/10 p-6 rounded-tl-[3rem] rounded-br-[3rem] max-w-6xl mx-auto" action={import.meta.env.VITE_FORM_SUBMIT_URL} method="POST" onSubmit={handleSubmit}>
+        <form action={import.meta.env.VITE_FORM_SUBMIT_URL} method="POST" onSubmit={handleSubmit}>
+          <div className="space-y-6 bg-white/10 p-6 mb-16 rounded-tl-[3rem] rounded-br-[3rem] max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-white mb-1">
@@ -146,10 +147,10 @@ const Contact = () => {
               <p className="mt-1 text-sm text-red-500">{errors.message}</p>
             )}
           </div>
-
+          </div>
           <button
             type="submit"
-            className="w-full md:w-auto bg-[#84444b] hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full md:w-auto bg-[#11403e] hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isSending}
           >
             {isSending ? "✓" : "Send Message"}
