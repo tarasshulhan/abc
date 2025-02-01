@@ -9,7 +9,7 @@
 }
 
 .leaflet-marker-pane {
-  filter: invert(100%) hue-rotate(320deg) brightness(58%) contrast(90%);
+  filter: invert(95%) brightness(70%);
 }
 
 .leaflet-layer,
@@ -23,3 +23,25 @@
   width: 100vw;
   background: #11403e;
 }
+
+.leaflet-popup-content {
+  background: #1e1916;
+  color: #9685a2;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1e1916;
+  color: #9685a2;
+  border: 1px solid #9685a2;
+}
+
+.leaflet-popup-close-button {
+  color: #9685a2;
+}
+
+.leaflet-popup-tip {
+  background: #9685a2;
+}
+
+
+

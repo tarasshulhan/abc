@@ -14,12 +14,12 @@ const Map = () => {
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
-      geocode: [18.73569, -70.16265],
+      geocode: [19.3, -70.16265],
       popUpTitle: "Dominican Republic",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
-      geocode: [18.10958, -77.2975],
+      geocode: [18.70958, -77.2975],
       popUpTitle: "Jamaica",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
@@ -56,7 +56,7 @@ const Map = () => {
   ];
   
   const MyCustomIcon = L.icon({
-    iconUrl: '/marker2.png', // Replace with the URL of your icon image
+    iconUrl: '/marker3.png', // Replace with the URL of your icon image
     iconSize: [30, 30], // Size of the icon
     iconAnchor: [15, 24], // Point of the icon which will correspond to marker's location
     popupAnchor: [1, -8], // Point from which the popup should open relative to the iconAnchor
