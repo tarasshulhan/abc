@@ -98,7 +98,7 @@ const Clients = () => {
                 {client.description}
               </p>
               <a href={client.url}>
-                <button className="mt-4 bg-[#11403e] hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                <button className="mt-4 bg-[#203e4f] hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
                   Visit
                 </button>
               </a>

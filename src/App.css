@@ -15,13 +15,13 @@
 .leaflet-layer,
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-  filter: invert(100%) hue-rotate(160deg) brightness(95%) contrast(90%);
+  filter: invert(100%) hue-rotate(190deg) brightness(95%) contrast(90%);
 }
 
 .leaflet-container {
   height: 100vh;
   width: 100vw;
-  background: #11403e;
+  background: #203e4f;
 }
 
 .leaflet-popup-content {

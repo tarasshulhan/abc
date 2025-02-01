@@ -16,10 +16,11 @@ const Header = () => {
     <header
       className={`fixed w-full z-50 transition-all duration-300 bg-black/50 backdrop-blur-sm`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <h1 className="text-white text-xl font-bold">
+            <img src="/logo.png" alt="ABC Logo" className="h-32 w-auto" />
+            <h1 className="text-white text-lg font-bold text-wrap lg:text-2xl">
               Avanced Banking Consulting
             </h1>
           </div>
