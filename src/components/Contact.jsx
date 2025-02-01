@@ -59,7 +59,7 @@ const Contact = () => {
     };
 
   return (
-    <section className="py-8 bg-black/50 ">
+    <section id="contact" className="py-8 bg-black/50 ">
       <div className="mx-auto bg-black/50 p-16 py-24 pb-40 space-y-6 rounded-tl-[15rem] rounded-br-[15rem]">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
           Contact Us

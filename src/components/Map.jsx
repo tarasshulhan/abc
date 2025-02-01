@@ -56,15 +56,16 @@ const Map = () => {
   ];
   
   const MyCustomIcon = L.icon({
-    iconUrl: '/marker.png', // Replace with the URL of your icon image
+    iconUrl: '/marker2.png', // Replace with the URL of your icon image
     iconSize: [30, 30], // Size of the icon
-    iconAnchor: [10, 30], // Point of the icon which will correspond to marker's location
-    popupAnchor: [5, -10] // Point from which the popup should open relative to the iconAnchor
+    iconAnchor: [15, 24], // Point of the icon which will correspond to marker's location
+    popupAnchor: [1, -8], // Point from which the popup should open relative to the iconAnchor
+
   });
 
   const screenWidth = window.innerWidth;
   return (
-    <div className="bg-black/50 relative">
+    <div id="/" className="bg-black/50 relative">
       <MapContainer
         className="z-0 rounded-bl-[15rem]"
         id="map"
@@ -82,7 +83,7 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {markers.map((marker, index) => (
-          <Marker key={index} position={marker.geocode} icon={MyCustomIcon}>
+          <Marker key={index} position={marker.geocode} icon={MyCustomIcon} >
             <Popup>
               <h2>{marker.popUpTitle}</h2>
               <p>{marker.popUpContent}</p>
