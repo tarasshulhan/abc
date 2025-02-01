@@ -39,7 +39,7 @@ const Clients = () => {
     {
       id: 7,
       name: "Baitushum Bank",
-      logo: "src/assets/BF-logos-baitushum-removebg-preview.png", 
+      logo: "/BF-logos-baitushum-removebg-preview.png", 
       description: "Kyrgyzstan"
     },
     {
@@ -57,7 +57,7 @@ const Clients = () => {
     {
       id: 10,
       name: "KMF MFI",
-      logo: "src/assets/kmflogo.svg", 
+      logo: "/kmflogo.svg", 
       description: "Kazakhstan (in cooperation with Irfar Consulting)"
     }
   ];
@@ -69,11 +69,11 @@ const Clients = () => {
           Our Trusted Clients
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-8 max-w-6xl mx-auto">
           {clients.map((client) => (
             <div 
               key={client.id}
-              className="bg-white/15 p-6 rounded-tl-[3rem] rounded-br-[3rem]"
+              className="bg-white/15 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-1/2 lg:w-1/4 min-h-[20vh] max-h-[40vh]"
             >
               <div className="h-24 flex items-center justify-center mb-4">
                 <img
