@@ -56,30 +56,35 @@ const Map = () => {
 
   const screenWidth = window.innerWidth;
   return (
-    <MapContainer
-      className="w-full h-full z-0"
-      id="map"
-      zoomSnap={0.1}
-      center={[38.709991, -9.472008]}
-      zoom={screenWidth > 768 ? 3.4 : 1.5}
-      scrollWheelZoom={false}
-      dragging={screenWidth > 768}
-      attributionControl={false}
-      zoomControl={false}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {markers.map((marker, index) => (
-        <Marker key={index} position={marker.geocode}>
-          <Popup>
-            <h2>{marker.popUpTitle}</h2>
-            <p>{marker.popUpContent}</p>
-          </Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    <div className="bg-black/50 relative">
+      <MapContainer
+        className="z-0 rounded-bl-[15rem]"
+        id="map"
+        zoomSnap={0.01}
+        center={[10, 0]}
+        zoom={screenWidth > 768 ? 3.4 : 1.75}
+        scrollWheelZoom={false}
+        dragging={screenWidth > 768}
+        attributionControl={false}
+        zoomControl={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {markers.map((marker, index) => (
+          <Marker key={index} position={marker.geocode}>
+            <Popup>
+              <h2>{marker.popUpTitle}</h2>
+              <p>{marker.popUpContent}</p>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+      <div className="absolute bottom-4 left-4 text-white text-4xl animate-bounce">
+        ↓
+      </div>
+    </div>
   );
 };
 
