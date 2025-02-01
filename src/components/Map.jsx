@@ -81,7 +81,7 @@ const Map = () => {
           </Marker>
         ))}
       </MapContainer>
-      <div className="absolute bottom-4 left-4 text-white text-4xl animate-bounce">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-4xl animate-bounce">
         ↓
       </div>
     </div>

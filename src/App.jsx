@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Clients from "./components/Clients";
-import Divider from "./components/Divider";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Clients />
       <About />
       <Contact />
+      <Footer />
     </>
   );
 }

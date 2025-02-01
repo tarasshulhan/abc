@@ -59,13 +59,13 @@ const Contact = () => {
     };
 
   return (
-    <section className="py-16 bg-black/50 ">
+    <section className="py-8 bg-black/50 ">
       <div className="mx-auto bg-black/50 p-16 py-24 pb-40 space-y-6 rounded-tl-[15rem] rounded-br-[15rem]">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
           Contact Us
         </h2>
         
-        <form className="space-y-6 bg-white/10 p-6 rounded-tl-[3rem] rounded-br-[3rem]" action={import.meta.env.VITE_FORM_SUBMIT_URL} method="POST" onSubmit={handleSubmit}>
+        <form className="space-y-6 bg-white/10 p-6 rounded-tl-[3rem] rounded-br-[3rem] max-w-6xl mx-auto" action={import.meta.env.VITE_FORM_SUBMIT_URL} method="POST" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-white mb-1">
