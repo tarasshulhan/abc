@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl} from "react-leaflet";
 import L from 'leaflet';
 import { useState, useRef, useEffect } from 'react';
 
@@ -64,20 +64,21 @@ const Map = () => {
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
-      geocode: [41.37749, 64.58526],
+      geocode: [40.0691, 45.0382],
       popUpTitle: "Armenia",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
   ];
   
   const MyCustomIcon = L.icon({
-    iconUrl: '/marker3.png',
+    iconUrl: '/marker.png',
     iconSize: [30, 30],
     iconAnchor: [15, 24],
     popupAnchor: [1, -8],
   });
 
   const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
   const [jordanPercentPosition, setJordanPercentPosition] = useState({ x: '0%', y: '0%', labelX: '0%' });
 
@@ -105,18 +106,19 @@ const Map = () => {
   }, []);
 
   return (
-    <div id="/" className="bg-black/50 relative">
+    <div id="/"  className="bg-black/50 relative">
       <MapContainer
+        style={{height: screenHeight}}
         className="z-0 rounded-bl-[15rem]"
         id="map"
         zoomSnap={0.01}
         center={screenWidth > 768 ? [10, 0] : [25, -10]}
         zoom={screenWidth > 768 ? 3.4 : 1.55}
         scrollWheelZoom={false}
+        doubleClickZoom={screenWidth > 768 ? true : false}
         dragging={screenWidth > 768}
         attributionControl={false}
         zoomControl={false}
-        doubleClickZoom={false}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -135,6 +137,7 @@ const Map = () => {
             </Popup>
           </Marker>
         ))}
+      {screenWidth > 768 && <ZoomControl position="bottomright"/>}
       </MapContainer>
 
       {showOverlay && (
