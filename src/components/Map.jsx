@@ -145,7 +145,9 @@ const Map = () => {
           className="absolute inset-0 z-10"
           onClick={() => setShowOverlay(false)}
         >
-          <svg className="w-full h-full" style={{backgroundColor: 'rgba(0,0,0,0.7)'}}>
+          <img src="pinch.png" className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[25%] h-[15%] md:hidden"/>
+          <img src="drag2.png" className="absolute top-1/4 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[33%] h-[15%] md:hidden"/>
+          <svg className="w-full h-full" style={{backgroundColor: 'rgba(0,0,0,0.1)'}}>
             <defs>
               <mask id="circle-mask">
                 <rect width="100%" height="100%" fill="white"/>
@@ -153,13 +155,14 @@ const Map = () => {
                 cx={jordanPercentPosition.x} 
                 cy={jordanPercentPosition.y} 
                 r={screenWidth > 768 ? "50" : "30"} 
-                fill="black"/>
+                fill="black"
+                />
               </mask>
             </defs>
             <rect
               width="100%"
               height="100%"
-              fill="rgba(0,0,0,0.7)"
+              fill="rgba(0,0,0,0.75)"
               mask="url(#circle-mask)"
             />
             <text
@@ -169,7 +172,7 @@ const Map = () => {
               fontSize="20"
               textAnchor="end"
               dominantBaseline="middle"
-              className="hidden md:block"
+              className="text-white text-lg font-bold hidden md:block"
             >
               Click here →
             </text>
@@ -180,14 +183,16 @@ const Map = () => {
               fontSize="20"
               textAnchor="end"
               dominantBaseline="middle"
-              className="block md:hidden"
+              className="text-white text-lg font-bold md:hidden"
             >
               Tap here →
             </text>
           </svg>
+          
         </div>
       )}
 
+  
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-4xl animate-bounce">
         ↓
       </div>
