@@ -5,40 +5,6 @@ import { useState, useRef, useEffect } from 'react';
 const Map = () => {
   const [showOverlay, setShowOverlay] = useState(true);
   const jordanMarkerRef = useRef(null);
-  const [jordanScreenPosition, setJordanScreenPosition] = useState({ x: 0, y: 0 });
-  const [jordanPercentPosition, setJordanPercentPosition] = useState({ x: '0%', y: '0%' });
-  const [markerReady, setMarkerReady] = useState(false);
-
-  useEffect(() => {
-    if (jordanMarkerRef.current) {
-      const markerElement = jordanMarkerRef.current;
-      const element = markerElement.getElement();
-      
-      const updatePosition = () => {
-        const rect = element.getBoundingClientRect();
-        const pixelX = rect.left + rect.width / 2;
-        const pixelY = rect.top + rect.height / 2;
-        
-        // Calculate percentages
-        const percentX = ((pixelX / window.innerWidth) * 100).toFixed(2);
-        const percentY = ((pixelY / window.innerHeight) * 100).toFixed(2);
-
-        setJordanScreenPosition({ x: pixelX, y: pixelY });
-        setJordanPercentPosition({ x: `${percentX}%`, y: `${percentY}%` });
-        setMarkerReady(true);
-      };
-
-      // Update position initially and when map moves
-      updatePosition();
-      markerElement._map.on('move zoom', updatePosition);
-
-      return () => {
-        if (markerElement._map) {
-          markerElement._map.off('move zoom', updatePosition);
-        }
-      };
-    }
-  }, [jordanMarkerRef.current]);
 
   useEffect(() => {
     if (!showOverlay && jordanMarkerRef.current) {
@@ -112,6 +78,32 @@ const Map = () => {
   });
 
   const screenWidth = window.innerWidth;
+
+  const [jordanPercentPosition, setJordanPercentPosition] = useState({ x: '0%', y: '0%', labelX: '0%' });
+
+  useEffect(() => {
+    const updatePosition = () => {
+      if (jordanMarkerRef.current) {
+        const markerElement = jordanMarkerRef.current;
+        const element = markerElement.getElement();
+        const rect = element.getBoundingClientRect();
+        const xPercent = ((rect.left + rect.width / 2) / window.innerWidth) * 100;
+        const yPercent = ((rect.top + rect.height / 2) / window.innerHeight) * 100;
+        
+        setJordanPercentPosition({ 
+          x: `${xPercent}%`,
+          y: `${yPercent}%`,
+          labelX: `${xPercent - (screenWidth > 768 ? 5 : 15)}%`, // Offset label 10% to the left
+        });
+      }
+    };
+
+    // Small delay to ensure the map and marker are fully rendered
+    const timeoutId = setTimeout(updatePosition, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <div id="/" className="bg-black/50 relative">
       <MapContainer
@@ -154,14 +146,11 @@ const Map = () => {
             <defs>
               <mask id="circle-mask">
                 <rect width="100%" height="100%" fill="white"/>
-                {markerReady && (
-                  <circle 
-                    cx={jordanPercentPosition.x} 
-                    cy={jordanPercentPosition.y} 
-                    r="50" 
-                    fill="black"
-                  />
-                )}
+                <circle 
+                cx={jordanPercentPosition.x} 
+                cy={jordanPercentPosition.y} 
+                r={screenWidth > 768 ? "50" : "30"} 
+                fill="black"/>
               </mask>
             </defs>
             <rect
@@ -170,6 +159,28 @@ const Map = () => {
               fill="rgba(0,0,0,0.7)"
               mask="url(#circle-mask)"
             />
+            <text
+              x={jordanPercentPosition.labelX}
+              y={jordanPercentPosition.y}
+              fill="white"
+              fontSize="20"
+              textAnchor="end"
+              dominantBaseline="middle"
+              className="hidden md:block"
+            >
+              Click here →
+            </text>
+            <text
+              x={jordanPercentPosition.labelX}
+              y={jordanPercentPosition.y}
+              fill="white"
+              fontSize="20"
+              textAnchor="end"
+              dominantBaseline="middle"
+              className="block md:hidden"
+            >
+              Tap here →
+            </text>
           </svg>
         </div>
       )}
