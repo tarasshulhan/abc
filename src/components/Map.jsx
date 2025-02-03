@@ -1,7 +1,51 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from 'leaflet';
+import { useState, useRef, useEffect } from 'react';
 
 const Map = () => {
+  const [showOverlay, setShowOverlay] = useState(true);
+  const jordanMarkerRef = useRef(null);
+  const [jordanScreenPosition, setJordanScreenPosition] = useState({ x: 0, y: 0 });
+  const [jordanPercentPosition, setJordanPercentPosition] = useState({ x: '0%', y: '0%' });
+  const [markerReady, setMarkerReady] = useState(false);
+
+  useEffect(() => {
+    if (jordanMarkerRef.current) {
+      const markerElement = jordanMarkerRef.current;
+      const element = markerElement.getElement();
+      
+      const updatePosition = () => {
+        const rect = element.getBoundingClientRect();
+        const pixelX = rect.left + rect.width / 2;
+        const pixelY = rect.top + rect.height / 2;
+        
+        // Calculate percentages
+        const percentX = ((pixelX / window.innerWidth) * 100).toFixed(2);
+        const percentY = ((pixelY / window.innerHeight) * 100).toFixed(2);
+
+        setJordanScreenPosition({ x: pixelX, y: pixelY });
+        setJordanPercentPosition({ x: `${percentX}%`, y: `${percentY}%` });
+        setMarkerReady(true);
+      };
+
+      // Update position initially and when map moves
+      updatePosition();
+      markerElement._map.on('move zoom', updatePosition);
+
+      return () => {
+        if (markerElement._map) {
+          markerElement._map.off('move zoom', updatePosition);
+        }
+      };
+    }
+  }, [jordanMarkerRef.current]);
+
+  useEffect(() => {
+    if (!showOverlay && jordanMarkerRef.current) {
+      jordanMarkerRef.current.openPopup();
+    }
+  }, [showOverlay]);
+
   const markers = [
     {
       geocode: [33.93911, 67.70995],
@@ -10,7 +54,7 @@ const Map = () => {
     },
     {
       geocode: [40.1431, 47.57692],
-      popUpTitle: "Azerbaijan",
+      popUpTitle: "Azerbaijan", 
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
     {
@@ -53,14 +97,18 @@ const Map = () => {
       popUpTitle: "Uzbekistan",
       popUpContent: "Afghanistan is a country in Central Asia.",
     },
+    {
+      geocode: [41.37749, 64.58526],
+      popUpTitle: "Armenia",
+      popUpContent: "Afghanistan is a country in Central Asia.",
+    },
   ];
   
   const MyCustomIcon = L.icon({
-    iconUrl: '/marker3.png', // Replace with the URL of your icon image
-    iconSize: [30, 30], // Size of the icon
-    iconAnchor: [15, 24], // Point of the icon which will correspond to marker's location
-    popupAnchor: [1, -8], // Point from which the popup should open relative to the iconAnchor
-
+    iconUrl: '/marker3.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 24],
+    popupAnchor: [1, -8],
   });
 
   const screenWidth = window.innerWidth;
@@ -83,7 +131,12 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {markers.map((marker, index) => (
-          <Marker key={index} position={marker.geocode} icon={MyCustomIcon} >
+          <Marker 
+            key={index} 
+            position={marker.geocode} 
+            icon={MyCustomIcon}
+            ref={marker.popUpTitle === "Jordan" ? jordanMarkerRef : null}
+          >
             <Popup>
               <h2>{marker.popUpTitle}</h2>
               <p>{marker.popUpContent}</p>
@@ -91,6 +144,36 @@ const Map = () => {
           </Marker>
         ))}
       </MapContainer>
+
+      {showOverlay && (
+        <div 
+          className="absolute inset-0 z-10"
+          onClick={() => setShowOverlay(false)}
+        >
+          <svg className="w-full h-full" style={{backgroundColor: 'rgba(0,0,0,0.7)'}}>
+            <defs>
+              <mask id="circle-mask">
+                <rect width="100%" height="100%" fill="white"/>
+                {markerReady && (
+                  <circle 
+                    cx={jordanPercentPosition.x} 
+                    cy={jordanPercentPosition.y} 
+                    r="50" 
+                    fill="black"
+                  />
+                )}
+              </mask>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              fill="rgba(0,0,0,0.7)"
+              mask="url(#circle-mask)"
+            />
+          </svg>
+        </div>
+      )}
+
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-4xl animate-bounce">
         ↓
       </div>

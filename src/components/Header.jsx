@@ -16,14 +16,13 @@ const Header = () => {
     <header
       className={`fixed w-full z-50 transition-all duration-300 bg-black/50 backdrop-blur-sm`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
+      <div className=" flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
             <img src="/logo.png" alt="ABC Logo" className="h-32 w-auto" />
-            <h1 className="text-white text-lg font-bold text-wrap lg:text-2xl">
-              Avanced Banking Consulting
+            <h1 className="py-2 text-white text-lg font-bold text-wrap lg:text-2xl">
+              Avanced <br className="md:hidden" />Banking <br className="md:hidden" />Consulting
             </h1>
-          </div>
+          
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -107,7 +106,6 @@ const Header = () => {
             </div>
           </nav>
         )}
-      </div>
     </header>
   );
 };

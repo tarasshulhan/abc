@@ -82,13 +82,13 @@ const Clients = () => {
           {clients.map((client) => (
             <div 
               key={client.id}
-              className="flex flex-col justify-between items-center bg-white/15 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-1/2 lg:w-1/4 min-h-[20vh] self-stretch"
+              className="flex flex-col justify-between items-center bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-1/2 lg:w-1/4 min-h-[20vh] self-stretch"
             >
               <div className="h-24 flex items-center justify-center mb-4 w-full">
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="bg-white/30 h-full w-full object-contain rounded-tl-[1.5rem] rounded-br-[1.5rem] p-2"
+                  className="bg-white/45 h-full w-full object-contain rounded-tl-[1.5rem] rounded-br-[1.5rem] p-2"
                 />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">
