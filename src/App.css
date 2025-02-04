@@ -9,7 +9,7 @@
 }
 
 .leaflet-marker-pane {
-  filter: invert(95%) brightness(70%);
+  filter: brightness(75%);
 }
 
 .leaflet-layer,
@@ -25,22 +25,22 @@
 }
 
 .leaflet-popup-content {
-  background: #1e1916;
-  color: #9685a2;
+  background: #1c1a15;
+  color: #aeaeae;
 }
 
 .leaflet-popup-content-wrapper {
-  background: #1e1916;
-  color: #9685a2;
-  border: 1px solid #9685a2;
+  background: #1c1a15;
+  color: #aeaeae;
+  border: 1px solid #aeaeae;
 }
 
 .leaflet-popup-close-button {
-  color: #9685a2;
+  color: #aeaeae;
 }
 
 .leaflet-popup-tip {
-  background: #9685a2;
+  background: #aeaeae;
 }
 
 

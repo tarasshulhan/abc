@@ -71,7 +71,7 @@ const Map = () => {
   ];
   
   const MyCustomIcon = L.icon({
-    iconUrl: '/marker.png',
+    iconUrl: '/marker4.png',
     iconSize: [30, 30],
     iconAnchor: [15, 24],
     popupAnchor: [1, -8],
@@ -145,8 +145,8 @@ const Map = () => {
           className="absolute inset-0 z-10"
           onClick={() => setShowOverlay(false)}
         >
-          <img src="pinch.png" className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[25%] h-[15%] md:hidden"/>
-          <img src="drag2.png" className="absolute top-1/4 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[33%] h-[15%] md:hidden"/>
+          <img src="pinch.png" className="absolute top-3/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[25%] h-[15%] md:hidden"/>
+          <img src="drag2.png" className="absolute top-3/4 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[33%] h-[15%] md:hidden"/>
           <svg className="w-full h-full" style={{backgroundColor: 'rgba(0,0,0,0.1)'}}>
             <defs>
               <mask id="circle-mask">
