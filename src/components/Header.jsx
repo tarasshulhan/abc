@@ -17,8 +17,9 @@ const Header = () => {
       className={`fixed w-full z-50 transition-all duration-300 bg-black/50 backdrop-blur-sm`}
     >
       <div className=" flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-            <img src="/logo.png" alt="ABC Logo" className="h-32 w-auto" />
+            <a href="/">
+              <img src="/logo.png" alt="ABC Logo" className="h-32 w-auto" />
+            </a>
             <h1 className="py-2 text-white text-lg font-bold text-wrap lg:text-2xl">
               Avanced <br className="md:hidden" />Banking <br className="md:hidden" />Consulting
             </h1>
@@ -51,7 +52,7 @@ const Header = () => {
               Services
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="text-white hover:text-gray-300 transition-colors"
             >
               Contact
@@ -110,7 +111,7 @@ const Header = () => {
                 Services
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="text-white hover:text-gray-300 transition-colors"
               >
                 Contact

@@ -24,7 +24,37 @@ const Services = () => {
       description: "Development and implementation of comprehensive risk management frameworks and strategies.",
       icon: "⚖️"
     },
-    // Add more services as needed
+    {
+      id: 5,
+      title: "Digital Transformation",
+      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
+      icon: "🌐"
+    },
+    {
+      id: 6,
+      title: "Digital Transformation",
+      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
+      icon: "🌐"
+    },
+    {
+      id: 7,
+      title: "Digital Transformation",
+      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
+      icon: "🌐"
+    },
+    {
+      id: 8,
+      title: "Digital Transformation",
+      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
+      icon: "🌐"
+    },
+    {
+      id: 9,
+      title: "Digital Transformation",
+      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
+      icon: "🌐"
+    },
+
   ];
 
   return (

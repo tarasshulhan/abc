@@ -21,6 +21,48 @@ const Projects = () => {
       location: "Azerbaijan, Armenia",
       year: "2020-2021"
     },
+    {
+      id: 4,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
+    {
+      id: 5,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
+    {
+      id: 6,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
+    {
+      id: 7,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
+    {
+      id: 8,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
+    {
+      id: 9,
+      title: "Banking System Modernization",
+      description: "Consulted on the modernization of legacy banking systems and processes for regional banks.",
+      location: "Azerbaijan, Armenia",
+      year: "2020-2021"
+    },
     // Add more projects as needed
   ];
 

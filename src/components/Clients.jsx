@@ -72,7 +72,7 @@ const Clients = () => {
   ];
 
   return (
-    <section id="clients" className="pt-16 pb-8 bg-black/50">
+    <section id="clients" className="pt-16 bg-black/50">
       <div className="bg-black/50 p-16 py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Our Trusted Clients

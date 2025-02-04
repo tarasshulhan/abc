@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ClientsPage from "./pages/ClientsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   );
