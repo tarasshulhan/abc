@@ -13,21 +13,24 @@ import ClientsPage from "./pages/ClientsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <>
             <Header />
             <Map />
-            <Clients />
+            <Clients fromHome={true} />
             <About />
             <Contact />
             <Footer />
           </>
         } />
+        
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/services" element={<ServicesPage />} />

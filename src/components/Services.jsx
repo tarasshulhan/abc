@@ -1,70 +1,22 @@
+import { services } from '../data/services';
+
+/**
+ * Services Component
+ * Renders a grid section displaying company services
+ */
 const Services = () => {
-  const services = [
-    {
-      id: 1,
-      title: "Digital Banking Transformation",
-      description: "Comprehensive digital transformation services for financial institutions, including strategy development, implementation, and training.",
-      icon: "🌐"
-    },
-    {
-      id: 2,
-      title: "Microfinance Consulting",
-      description: "Expert guidance on microfinance operations, risk management, and program development for financial inclusion.",
-      icon: "💰"
-    },
-    {
-      id: 3,
-      title: "Banking Systems Modernization",
-      description: "End-to-end support for modernizing banking infrastructure, processes, and technology systems.",
-      icon: "🏦"
-    },
-    {
-      id: 4,
-      title: "Risk Management",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "⚖️"
-    },
-    {
-      id: 5,
-      title: "Digital Transformation",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "🌐"
-    },
-    {
-      id: 6,
-      title: "Digital Transformation",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "🌐"
-    },
-    {
-      id: 7,
-      title: "Digital Transformation",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "🌐"
-    },
-    {
-      id: 8,
-      title: "Digital Transformation",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "🌐"
-    },
-    {
-      id: 9,
-      title: "Digital Transformation",
-      description: "Development and implementation of comprehensive risk management frameworks and strategies.",
-      icon: "🌐"
-    },
-
-  ];
-
   return (
     <section id="services" className="pt-16 pb-8 bg-black/50">
+      {/* Main container with curved borders */}
       <div className="bg-black/50 p-16 py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+        {/* Section heading */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Our Services
         </h2>
         
-        <div className="flex flex-wrap justify-center items-stretch gap-8 max-w-6xl mx-auto">
+        {/* Services grid container */}
+        <div className="flex flex-wrap justify-center items-stretch gap-8 max-w-6xl mx-auto text-white">
+          {/* Map through services to create individual service cards */}
           {services.map((service) => (
             <div 
               key={service.id}
@@ -73,10 +25,10 @@ const Services = () => {
               <div className="text-4xl mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3 className="text-xl font-semibold mb-4">
                 {service.title}
               </h3>
-              <p className="text-white">
+              <p>
                 {service.description}
               </p>
             </div>
