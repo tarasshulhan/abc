@@ -33,16 +33,22 @@ const Header = () => {
               Home
             </a>
             <a
-              href="#clients"
+              href="/clients"
               className="text-white hover:text-gray-300 transition-colors"
             >
               Clients
             </a>
             <a
-              href="#about"
+              href="/projects"
               className="text-white hover:text-gray-300 transition-colors"
             >
-              About
+              Projects
+            </a>
+            <a
+              href="/services"
+              className="text-white hover:text-gray-300 transition-colors"
+            >
+              Services
             </a>
             <a
               href="#contact"
@@ -86,16 +92,22 @@ const Header = () => {
                 Home
               </a>
               <a
-                href="#clients"
+                href="/clients"
                 className="text-white hover:text-gray-300 transition-colors"
               >
                 Clients
               </a>
               <a
-                href="#about"
+                href="/projects"
                 className="text-white hover:text-gray-300 transition-colors"
               >
-                About
+                Projects
+              </a>
+              <a
+                href="/services"
+                className="text-white hover:text-gray-300 transition-colors"
+              >
+                Services
               </a>
               <a
                 href="#contact"

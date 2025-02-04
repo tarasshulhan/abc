@@ -3,14 +3,29 @@ import L from 'leaflet';
 import { useState, useRef, useEffect } from 'react';
 
 const Map = () => {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  
   const [showOverlay, setShowOverlay] = useState(true);
   const jordanMarkerRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [zoomLevel, setZoomLevel] = useState(screenWidth > 768 ? 3.4 : 1.55);
+  const mapRef = useRef(null);
 
   useEffect(() => {
     if (!showOverlay && jordanMarkerRef.current) {
       jordanMarkerRef.current.openPopup();
     }
   }, [showOverlay]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const markers = [
     {
@@ -77,9 +92,6 @@ const Map = () => {
     popupAnchor: [1, -8],
   });
 
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-
   const [jordanPercentPosition, setJordanPercentPosition] = useState({ x: '0%', y: '0%', labelX: '0%' });
 
   useEffect(() => {
@@ -105,17 +117,34 @@ const Map = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  const handleZoomIn = () => {
+    if (mapRef.current) {
+      const map = mapRef.current;
+      map.setZoom(map.getZoom() + 1);
+      setZoomLevel(map.getZoom());
+    }
+  };
+
+  const handleZoomOut = () => {
+    if (mapRef.current) {
+      const map = mapRef.current;
+      map.setZoom(map.getZoom() - 1);
+      setZoomLevel(map.getZoom());
+    }
+  };
+
   return (
     <div id="/"  className="bg-black/50 relative">
       <MapContainer
+        ref={mapRef}
         style={{height: screenHeight}}
         className="z-0 rounded-bl-[15rem]"
         id="map"
         zoomSnap={0.01}
         center={screenWidth > 768 ? [10, 0] : [25, -10]}
-        zoom={screenWidth > 768 ? 3.4 : 1.55}
+        zoom={zoomLevel}
         scrollWheelZoom={false}
-        doubleClickZoom={screenWidth > 768 ? true : false}
+        doubleClickZoom={true}
         dragging={screenWidth > 768}
         attributionControl={false}
         zoomControl={false}
@@ -137,16 +166,33 @@ const Map = () => {
             </Popup>
           </Marker>
         ))}
-      {screenWidth > 768 && <ZoomControl position="bottomright"/>}
       </MapContainer>
+
+      {/* Custom zoom controls overlay */}
+      {screenWidth > 768 && (
+        <div className="absolute mx-2 text-white text-2xl font-bold bottom-8 right-4 z-5 flex flex-col gap-2">
+          <button 
+            onClick={handleZoomIn}
+            className="bg-black/50 rounded-sm w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-700"
+          >
+            +
+          </button>
+          <button 
+            onClick={handleZoomOut}
+            className="bg-black/50 rounded-sm w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-700"
+          >
+            -
+          </button>
+        </div>
+      )}
 
       {showOverlay && (
         <div 
           className="absolute inset-0 z-10"
           onClick={() => setShowOverlay(false)}
         >
-          <img src="pinch.png" className="absolute top-3/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[25%] h-[15%] md:hidden"/>
-          <img src="drag2.png" className="absolute top-3/4 left-3/4 -translate-x-1/2 -translate-y-1/2 w-[33%] h-[15%] md:hidden"/>
+         
+
           <svg className="w-full h-full" style={{backgroundColor: 'rgba(0,0,0,0.1)'}}>
             <defs>
               <mask id="circle-mask">
@@ -162,7 +208,7 @@ const Map = () => {
             <rect
               width="100%"
               height="100%"
-              fill="rgba(0,0,0,0.75)"
+              fill="rgba(0,0,0,0.8)"
               mask="url(#circle-mask)"
             />
             <text
@@ -192,8 +238,20 @@ const Map = () => {
         </div>
       )}
 
+      {/* Add new persistent overlay */}
+      <div className="absolute bottom-4 right-4 z-5 p-2 md:hidden">
+        <img 
+          src="/pinch.png" 
+          alt="Map marker" 
+          className="w-8 h-8"
+        />
+      </div>
   
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-4xl animate-bounce">
+      <div 
+        className={`absolute bottom-4 left-4 text-white text-4xl animate-bounce ${
+          scrollY > 100 ? 'hidden' : ''
+        }`}
+      >
         ↓
       </div>
     </div>
