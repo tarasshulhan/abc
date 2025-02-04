@@ -10,6 +10,7 @@ const About = () => {
             </h2>
           <div className="grid grid-cols-1 gap-8 max-w-6xl mx-auto md:grid-cols-2">
             <div className="mt-8 mb-8 bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tr-[3rem] rounded-bl-[3rem] max-w-3xl flex flex-col justify-center items-center">
+            <span className="text-4xl mb-4">🚀</span>
             <p className="text-lg text-white mt-8 mb-8 ">
             Advanced Banking Consulting (ABC) is a boutique consulting firm that applies an innovative, forward-thinking approach to banking and microfinance consulting. Our clients include microfinance companies, credit unions, banks, international financial institutions, and central banks worldwide. We serve them directly or in collaboration with other consulting firms, always selecting the most effective approach to meet their unique needs.
             </p>
@@ -23,6 +24,7 @@ const About = () => {
             </div>
 
             <div className="mt-8 mb-8 bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tr-[3rem] rounded-bl-[3rem] max-w-3xl flex flex-col justify-center items-center">
+            <span className="text-4xl mb-4">💼</span>
             <p className="text-lg text-white mt-8 mb-8 ">
             Advanced Banking Consulting (ABC) is a boutique consulting firm that applies an innovative, forward-thinking approach to banking and microfinance consulting. Our clients include microfinance companies, credit unions, banks, international financial institutions, and central banks worldwide. We serve them directly or in collaboration with other consulting firms, always selecting the most effective approach to meet their unique needs.
             </p>
