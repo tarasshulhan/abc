@@ -25,20 +25,24 @@ const Projects = () => {
             >
               {/* Project title and description */}
               <div>
-                <h3 className="text-xl font-semibold text-white mb-4">
+              <div className="text-4xl mb-4">
+                  {project.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">
                   {project.title}
                 </h3>
-                <p className="text-white mb-4">
+                <p className="text-white text-lg mb-4">
                   {project.description}
                 </p>
+
               </div>
               {/* Project metadata (location and year) */}
               <div className="mt-auto">
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-300">
                   Location: {project.location}
                 </p>
-                <p className="text-gray-300 text-sm">
-                  Year: {project.year}
+                <p className="text-gray-300">
+                  Timeline: {project.year}
                 </p>
               </div>
             </div>

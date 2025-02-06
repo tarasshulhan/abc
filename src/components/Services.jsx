@@ -20,14 +20,16 @@ const Services = () => {
           {services.map((service) => (
             <div 
               key={service.id}
-              className="flex flex-col justify-between bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)]"
+              className="flex flex-col justify-start bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)]"
             >
+             
               <div className="text-4xl mb-4">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4">
                 {service.title}
               </h3>
+              
               <p>
                 {service.description}
               </p>

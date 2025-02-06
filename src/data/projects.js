@@ -1,74 +1,245 @@
 export const projects = [
   {
     id: 1,
-    title: "Digital Transformation",
+    title: "Frankfurt School of Finance & Management on behalf of the GCF",
     description:
-      "Led digital transformation initiatives for multiple financial institutions across Central Asia, implementing modern banking systems and digital services.",
-    location: "Kazakhstan, Kyrgyzstan",
-    year: "2022-2023",
+      "Supported GCF accreditation of four major Jamaican DFIs (JSIF, PIOJ, CCD, DBJ) through comprehensive assessments and tailored interventions.",
+    location: "Jamaica",
+    year: "07/2024 – Present",
+    icon: "🌱",
   },
   {
     id: 2,
-    title: "Microfinance Development",
+    title: "Frankfurt School of Finance & Management on behalf of the EIB",
     description:
-      "Developed and implemented microfinance programs focusing on rural communities and small businesses.",
-    location: "Dominican Republic, Jamaica",
-    year: "2021-2022",
+      "Enhanced MSME lending capacity for EIB-funded projects by conducting assessments, redesigning lending methodologies, developing technical assistance plans, and delivering extensive training with a focus on youth, gender, and climate impact.",
+    location: "Caribbean",
+    year: "05/2018 – 11/2023",
+    icon: "🏦",
   },
   {
     id: 3,
-    title: "Banking System Modernization",
+    title: "World Vision International",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Conducted a feasibility study for establishing a microfinance company in Ukraine, leading to its successful launch.",
+    location: "Ukraine",
+    year: "11/2022 – 02/2023",
+    icon: "📊",
   },
   {
     id: 4,
-    title: "Banking System Modernization",
+    title: "Frankfurt School of Finance & Management on behalf of the CDB",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Supported the GCF accreditation of Belize's Development Finance Corporation by establishing robust internal controls, developing audit and risk management policies, and training senior leadership.",
+    location: "Belize",
+    year: "05/2022 – 05/2023",
+    icon: "📋",
   },
   {
     id: 5,
-    title: "Banking System Modernization",
+    title: "International Finance Corporation (IFC)",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Developed a digital, credit-scoring–based automated loan product for Imon International MFI to enhance lending efficiency and accessibility.",
+    location: "Tajikistan",
+    year: "01/2022 – 06/2022",
+    icon: "💻",
   },
   {
     id: 6,
-    title: "Banking System Modernization",
+    title: "Frankfurt School of Finance & Management on behalf of the EIB",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Delivered a comprehensive assessment for Liberty Bank and implemented tailored technical assistance plans and capacity-building initiatives to boost MSME lending operations.",
+    location: "Georgia",
+    year: "07/2021 – 02/2023",
+    icon: "📈",
   },
   {
     id: 7,
-    title: "Banking System Modernization",
+    title: "Business Finance Consulting on behalf of the EBRD",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Contributed to the EBRD BEPS III banking sector survey through in-depth research and stakeholder interviews.",
+    location: "Ukraine",
+    year: "02/2021 – 06/2021",
+    icon: "📝",
   },
   {
     id: 8,
-    title: "Banking System Modernization",
+    title: "Business Finance Consulting on behalf of the KfW",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Developed a digital, credit-scoring–based automated loan product for Fast Credit Capital, strengthening the digital finance capabilities of a leading Armenian non-bank lender.",
+    location: "Armenia",
+    year: "02/2021 – 12/2021",
+    icon: "📱",
   },
   {
     id: 9,
-    title: "Banking System Modernization",
+    title: "Business Finance Consulting on behalf of the ADB",
     description:
-      "Consulted on the modernization of legacy banking systems and processes for regional banks.",
-    location: "Azerbaijan, Armenia",
-    year: "2020-2021",
+      "Crafted risk-sharing policies and an Enterprise Risk Management Manual for Ipak Yuli Bank and Davr Bank, complemented by targeted training for senior management and branch teams.",
+    location: "Uzbekistan",
+    year: "02/2018 – 10/2019",
+    icon: "⚖️",
+  },
+  {
+    id: 10,
+    title: "ACDI/VOCA on behalf of the USAID",
+    description:
+      "Led an institutional assessment for St Elizabeth Cooperative Credit Union, providing actionable recommendations and targeted training to optimize MSME lending practices.",
+    location: "Jamaica",
+    year: "01/2018 – 05/2018",
+    icon: "🤝",
+  },
+  {
+    id: 11,
+    title: "Frankfurt School of Finance & Management on behalf of the EBRD",
+    description:
+      "Provided tailored technical assistance and training to Ahli and Capital Banks to establish robust MSME lending units, risk management frameworks, and product development strategies.",
+    location: "Jordan",
+    year: "06/2017 – 05/2018",
+    icon: "💼",
+  },
+  {
+    id: 12,
+    title: "International Finance Corporation (IFC)",
+    description:
+      "Advised on digital transformation initiatives for financial institutions by developing digital strategies, agent banking regulations, and innovative digital lending products.",
+    location: "Central Asia and Caucasus",
+    year: "04/2017 – 02/2020",
+    icon: "🔄",
+  },
+  {
+    id: 13,
+    title: "Baitushum Bank",
+    description:
+      "Drove strategic transformation through targeted MSME lending initiatives, enhanced risk-based internal audits, and digitalization efforts at a leading international bank.",
+    location: "Kyrgyzstan",
+    year: "12/2017 – 03/2021",
+    icon: "🎯",
+  },
+  {
+    id: 14,
+    title: "ACDI/VOCA on behalf of the USAID",
+    description:
+      "Delivered a rapid assessment for National Peoples Cooperative Bank and developed a reform roadmap to enhance governance, internal controls, and IT capabilities.",
+    location: "Jamaica",
+    year: "03/2017 – 04/2017",
+    icon: "⚡",
+  },
+  {
+    id: 15,
+    title: "IRFAR Consulting for the KMF MFI",
+    description:
+      "Developed robust credit risk scoring methodologies for agricultural and MSME loans, streamlining loan assessment and approval processes.",
+    location: "Kazakhstan",
+    year: "06/2017 – 09/2017",
+    icon: "📊",
+  },
+  {
+    id: 16,
+    title: "KREDAGRO MFI",
+    description:
+      "Guided a critical financial restructuring, attracted new equity investment, and successfully turned around the institution.",
+    location: "Azerbaijan",
+    year: "07/2015 – 03/2017",
+    icon: "💰",
+  },
+  {
+    id: 17,
+    title: "SPITAMEN Bank",
+    description:
+      "Led a comprehensive transformation, enhancing lending frameworks, risk management protocols, and operational efficiency to restore profitability.",
+    location: "Tajikistan",
+    year: "07/2015 – 06/2016",
+    icon: "📈",
+  },
+  {
+    id: 18,
+    title: "MISFA on behalf of the World Bank",
+    description:
+      "Conducted a sector study on community-based savings institutions, delivering strategic recommendations for sustainable financial inclusion.",
+    location: "Afghanistan",
+    year: "09/2015 – 04/2016",
+    icon: "🏘️",
+  },
+  {
+    id: 19,
+    title: "FINA MFI",
+    description:
+      "Strengthened governance and operations by developing audit and loan policies, implementing technology upgrades, and delivering targeted training for improved MSME lending.",
+    location: "Mexico",
+    year: "04/2014 – 06/2014",
+    icon: "📋",
+  },
+  {
+    id: 20,
+    title: "FINCA International, Inc.",
+    description:
+      "Directed global digital transformation initiatives, creating scalable digital banking solutions that enhanced credit, deposit, and payment services across regions.",
+    location: "USA, various (incl. Central Asia)",
+    year: "10/2012 – 02/2014",
+    icon: "🌐",
+  },
+  {
+    id: 21,
+    title: "FINCA International, Inc.",
+    description:
+      "Provided strategic leadership across Latin America, guiding the transformation of subsidiaries into robust, regulated financial institutions.",
+    location: "USA, Latin America",
+    year: "06/2010 – 10/2012",
+    icon: "🔄",
+  },
+  {
+    id: 22,
+    title: "FINCA Micro Credit Company (presently FINCA Bank Kyrgyzstan)",
+    description:
+      "Transformed an NGO into a top-tier regulated bank, achieving significant growth in assets, clientele, and operational capacity.",
+    location: "Kyrgyzstan",
+    year: "03/2006 – 06/2010",
+    icon: "⬆️",
+  },
+  {
+    id: 23,
+    title: "FINCA Micro Deposit Company",
+    description:
+      "Executed a successful restructuring plan that reduced arrears and restored profitability within six months.",
+    location: "Tajikistan",
+    year: "03/2008 – 10/2008",
+    icon: "🔧",
+  },
+  {
+    id: 24,
+    title: "FINCA Micro Credit Company",
+    description:
+      "Drove asset growth, secured key funding, and launched innovative lending programs to stimulate MSME development.",
+    location: "Kosovo",
+    year: "10/2002 – 03/2006",
+    icon: "💡",
+  },
+  {
+    id: 25,
+    title: "Mercy Corps Credit Program",
+    description:
+      "Transformed a UNDP-funded credit program into a sustainable non-bank financial institution with robust lending operations and governance frameworks.",
+    location: "Kosovo",
+    year: "10/2000 – 09/2002",
+    icon: "🚀",
+  },
+  {
+    id: 26,
+    title: "Western NIS Enterprise Fund",
+    description:
+      "Managed a small business loan program, overseeing client acquisition and underwriting to support MSME growth in Western Ukraine.",
+    location: "Ukraine",
+    year: "04/1997 – 08/2000",
+    icon: "💼",
+  },
+  {
+    id: 27,
+    title: "Western-Ukrainian Commercial Bank",
+    description:
+      "Supervised SME lending operations and managed a hard currency loan portfolio, facilitating significant SME credit growth under the EBRD programme.",
+    location: "Ukraine",
+    year: "10/1996 – 03/1997",
+    icon: "📊",
   },
 ];
