@@ -43,5 +43,12 @@
   background: #aeaeae;
 }
 
+.slick-dots li button:before {
+  color: white !important;
+}
 
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+}
 

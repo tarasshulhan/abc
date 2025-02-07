@@ -125,7 +125,22 @@ const Map = () => {
           >
             <Popup>
               <h2>{marker.popUpTitle}</h2>
-              <p>{marker.popUpContent}</p>
+              {marker.projects.length > 0 ? (
+                <div className="mt-2">
+                  {marker.projects.map((project) => (
+                    <div key={project.id} className="mb-2">
+                      <div className="flex items-center gap-2">
+                        <span>{project.icon}</span>
+                        <span className="font-semibold">{project.title}</span>
+                      </div>
+                      <p className="text-sm text-gray-600">{project.description}</p>
+                      <p className="text-xs text-gray-500 mt-1">{project.year}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-2 text-gray-500">No projects available</p>
+              )}
             </Popup>
           </Marker>
         ))}
@@ -205,7 +220,7 @@ const Map = () => {
       <div className="absolute bottom-4 right-4 z-5 p-2 md:hidden">
         <img 
           src="/pinch.png" 
-          alt="Map marker" 
+          alt="Map instructions" 
           className="w-8 h-8"
         />
       </div>
