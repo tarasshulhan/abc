@@ -3,43 +3,45 @@ import { clients } from '../data/clients';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Clients = ({ fromHome = false }) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  // Check if screen is mobile
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
     };
     
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
     
-    return () => window.removeEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
 
   const displayedClients = fromHome ? clients.slice(0, 6) : clients;
 
+  // Slider settings for mobile
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const settings = {
-    dots: true,
+    arrows: false,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerMode: true,
     autoplay: true,
-    autoplaySpeed: 3000,
-    appendDots: (dots) => (
-      <div style={{ bottom: "-30px" }}>
-        <div className="text-white text-center">
-          {dots.findIndex(dot => dot.props.className.includes('slick-active')) + 1}/{dots.length}
-        </div>
-      </div>
-    )
+    autoplaySpeed: 1500,
+    swipeToSlide: true,
+    afterChange: (current) => setCurrentSlide(current),
   };
 
-  const renderClientCard = (client) => (
-    <div className="flex flex-col justify-between items-center bg-black/35 shadow-lg shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] min-h-[25vh]">
+  // Client card component to avoid repetition
+  const ClientCard = ({ client }) => (
+    <div className="flex flex-col justify-between items-center bg-black/35 shadow-md shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full min-h-[45vh] self-stretch md:min-h-[30vh]">
       <div className="h-24 flex items-center justify-center mb-4 w-full">
         <img
           src={client.logo}
@@ -62,32 +64,40 @@ const Clients = ({ fromHome = false }) => {
   );
 
   return (
-    <section id="clients" className="pt-16 bg-black/50 min-h-screen flex flex-col justify-center">
-      <div className="bg-black/50 p-8 md:p-16 py-12 md:py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem] flex-grow flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+    <section id="clients" className="pt-8 bg-black/50 md:pt-16">
+      {/* Main container with curved corners */}
+      <div className="bg-black/50 py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
+        {/* Section heading */}
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 mt-8 text-center">
           Our Trusted Clients
         </h2>
         
-        <div className="max-w-6xl mx-auto px-4 flex-grow flex flex-col justify-center">
-          {isMobile ? (
+        {isMobile ? (
+          // Mobile carousel view
+          <div className="w-[100vw]">
             <Slider {...settings}>
               {displayedClients.map((client) => (
-                <div key={client.id} className="px-4 py-8">
-                  {renderClientCard(client)}
+                <div key={client.id} className="px-2">
+                  <ClientCard client={client} />
                 </div>
               ))}
             </Slider>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {displayedClients.map((client) => (
-                <div key={client.id}>
-                  {renderClientCard(client)}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+            {!fromHome && <div className="mt-4 text-white">
+              ← {currentSlide + 1} /{displayedClients.length} →
+            </div>}
+          </div>
+        ) : (
+          // Desktop grid view
+          <div className="flex flex-wrap justify-center items-center gap-8 max-w-6xl mx-auto">
+            {displayedClients.map((client) => (
+              <div key={client.id} className="w-full md:w-1/2 lg:w-1/4">
+                <ClientCard client={client} />
+              </div>
+            ))}
+          </div>
+        )}
 
+        {/* Conditional "See More" button when displayed on home page */}
         {fromHome && (
           <div className="text-center mt-12">
             <Link to="/clients">

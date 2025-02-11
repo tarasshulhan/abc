@@ -43,12 +43,24 @@
   background: #aeaeae;
 }
 
+.slick-prev,
+.slick-next {
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 15px !important;
+}
+
+.slick-next {
+  right: 15px !important;
+}
+
 .slick-dots li button:before {
   color: white !important;
 }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-dots li.slick-active button:before {
   color: white !important;
 }
 
