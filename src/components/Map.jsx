@@ -124,7 +124,7 @@ const Map = () => {
             ref={marker.popUpTitle === "Jordan" ? jordanMarkerRef : null}
           >
             <Popup>
-              <h2>{marker.popUpTitle}</h2>
+              <h2 className="text-lg font-bold">{marker.popUpTitle}</h2>
               {marker.projects.length > 0 ? (
                 <div className="mt-2">
                   {marker.projects.map((project) => (

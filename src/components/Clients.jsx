@@ -41,7 +41,7 @@ const Clients = ({ fromHome = false }) => {
 
   // Client card component to avoid repetition
   const ClientCard = ({ client }) => (
-    <div className="flex flex-col justify-between items-center bg-black/35 shadow-md shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full min-h-[45vh] self-stretch md:min-h-[30vh]">
+    <div className="flex flex-col justify-between items-center bg-black/35 shadow-md shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full min-h-[25rem] self-stretch">
       <div className="h-24 flex items-center justify-center mb-4 w-full">
         <img
           src={client.logo}
@@ -66,10 +66,10 @@ const Clients = ({ fromHome = false }) => {
   return (
     <section id="clients" className="pt-8 bg-black/50 md:pt-16">
       {/* Main container with curved corners */}
-      <div className="bg-black/50 py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
+      <div className="bg-black/50 py-10 md:py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
         {/* Section heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 mt-8 text-center">
-          Our Trusted Clients
+        <h2 className="text-3xl md:text-4xl ml-24 md:ml-0 font-bold text-white mb-12 text-center">
+          Clients
         </h2>
         
         {isMobile ? (

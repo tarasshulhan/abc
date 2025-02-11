@@ -27,12 +27,16 @@
 .leaflet-popup-content {
   background: #1c1a15;
   color: #aeaeae;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
 }
 
 .leaflet-popup-content-wrapper {
   background: #1c1a15;
   color: #aeaeae;
   border: 1px solid #aeaeae;
+  border-top-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
 }
 
 .leaflet-popup-close-button {
