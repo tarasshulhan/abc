@@ -27,12 +27,12 @@ const Services = () => {
     arrows: false,
     dots: false,
     infinite: true,
-    speed: 700,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 3000,
     swipeToSlide: true,
     afterChange: (current) => setCurrentSlide(current),
   };
@@ -40,9 +40,9 @@ const Services = () => {
   return (
     <section id="services" className="pt-8 pb-8 bg-black/50 md:pt-16">
       {/* Main container with curved borders */}
-      <div className="bg-black/50 py-10 md:py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
+      <div className="bg-black/50 py-10 md:py-24 pb-16 md:pb-32 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
         {/* Section heading */}
-        <h2 className="text-3xl md:text-4xl ml-24 md:ml-0 font-bold mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
           Services
         </h2>
         
@@ -50,8 +50,8 @@ const Services = () => {
           <div className="w-[100vw] max-w-md mx-auto relative">
             <Slider {...settings}>
               {services.map((service) => (
-                <div key={service.id} className="px-2">
-                  <div className="flex flex-col justify-center bg-black/35 shadow-md shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full min-h-[28rem]">
+                <div key={service.id} className="px-1">
+                  <div className="flex flex-col justify-start bg-black/35 shadow-md shadow-white/5 p-6 rounded-tl-[3rem] rounded-br-[3rem] w-full min-h-[28rem]">
                     <div className="text-4xl mb-4">
                       {service.icon}
                     </div>

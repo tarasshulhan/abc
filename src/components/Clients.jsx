@@ -29,12 +29,12 @@ const Clients = ({ fromHome = false }) => {
     arrows: false,
     dots: false,
     infinite: true,
-    speed: 700,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 3000,
     swipeToSlide: true,
     afterChange: (current) => setCurrentSlide(current),
   };
@@ -68,7 +68,7 @@ const Clients = ({ fromHome = false }) => {
       {/* Main container with curved corners */}
       <div className="bg-black/50 py-10 md:py-24 w-[100vw] rounded-tl-[15rem] rounded-br-[15rem]">
         {/* Section heading */}
-        <h2 className="text-3xl md:text-4xl ml-24 md:ml-0 font-bold text-white mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
           Clients
         </h2>
         
@@ -77,7 +77,7 @@ const Clients = ({ fromHome = false }) => {
           <div className="w-[100vw]">
             <Slider {...settings}>
               {displayedClients.map((client) => (
-                <div key={client.id} className="px-2">
+                <div key={client.id} className="px-1">
                   <ClientCard client={client} />
                 </div>
               ))}
@@ -99,10 +99,10 @@ const Clients = ({ fromHome = false }) => {
 
         {/* Conditional "See More" button when displayed on home page */}
         {fromHome && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-16 mb-6">
             <Link to="/clients">
               <button className="bg-[#203e4f] hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300">
-                See More Clients
+                More Clients
               </button>
             </Link>
           </div>

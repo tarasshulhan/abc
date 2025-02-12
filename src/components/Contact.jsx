@@ -65,7 +65,7 @@ const Contact = () => {
   return (
     <section id="contact" className="pt-8 bg-black/50 md:pt-16">
       {/* Main container */}
-      <div className="mx-auto bg-black/50 p-16 py-24 space-y-6 rounded-tl-[15rem] rounded-br-[15rem]">
+      <div className="mx-auto bg-black/50 p-16 py-24 pb-1 md:pb-16 space-y-6 rounded-tl-[15rem] rounded-br-[15rem]">
         {/* Section heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
           Contact Us
@@ -188,14 +188,15 @@ const Contact = () => {
             </div>
 
             {/* Submit button */}
-            <button
+           
+          </div>
+          <button
               type="submit"
-              className="w-full md:w-auto bg-[#203e4f] hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mb-24 md:mb-12 md:w-auto bg-[#203e4f] hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300"
               disabled={isSending}
             >
               {isSending ? "✓" : "Send Message"}
             </button>
-          </div>
         </form>
       </div>
     </section>
